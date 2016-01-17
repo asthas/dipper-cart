@@ -1,0 +1,67 @@
+body { 
+	padding-bottom: 70px; 
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-lg {
+	margin: 5px;
+	padding-left: 12px;
+}
+
+@media (min-width: 768px)
+.navbar-nav {
+	margin: 5px;
+}
+
+.navbar-default {
+	background-color: #333;
+}
+
+.intro-section {
+    height: 100%;
+    padding-top: 100px;
+    text-align: center;
+    background: #fff;
+}
+
+.servive-block {
+  height: 500px;
+  width: 300px;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.heading-md {
+	height: 60px;
+	width: 300px; 
+	background-color: #FFC107;
+	padding: 10px;
+}
+
+.content {
+	height: 160px;
+	width: 300px;
+	background-color: #fff;
+}
+
+.details {
+	height: 200px;
+	width: 300px;
+	background-color: #ffff8d;
+} 
+
+.buyButton {
+	height: 40px;
+	width: 300px;
+	background-color: #00B0FF;
+}
