@@ -34,28 +34,31 @@ html {
 }
 
 .servive-block {
-  height: 500px;
+  height: 400px;
   width: 300px;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   background-color: #fff;
+  border-width: 5px;
+  border-color: #000;
 }
 
 .heading-md {
 	height: 60px;
 	width: 300px; 
 	background-color: #FFC107;
-	padding: 10px;
+	padding: 12px;
 }
 
 .content {
 	height: 160px;
 	width: 300px;
 	background-color: #fff;
+	padding: 20px;
 }
 
 .details {
-	height: 200px;
+	height: 120px;
 	width: 300px;
 	background-color: #ffff8d;
 } 
