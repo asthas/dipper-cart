@@ -70,6 +70,25 @@ h2{
 	background-color: #ffff8d;
 }
 
+.first-row {
+  height: 30%;
+  width: 100%;
+}
+
+.second-row {
+  height: 35%;
+  width: 100%;
+}
+
+.third-row {
+  height: 35%;
+  width: 100%;
+}
+
+.rupsymbol{
+  height: 14px;
+  width: 20px;
+}
 .buyButton {
 	height: 56px;
 	width: 100%;
