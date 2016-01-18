@@ -30,18 +30,20 @@
 			  		    <div class="content">
 			  		    	<img src="http://www.futurekirana.com/image/cache/data/image%20new-15-01-13/Lays-Classic-Salted-26-g-120x120.jpg" > 
 			  		    </div>
-			  		     <div class="details" ng-controller="CartController">
+			  		     <div class="details" ng-controller="CartController as cart">
 			  		    	<div class="row first-row">
 			  		    		
 			  		    	</div>
 			  		    	<div class="row second-row">
-			  		    		
+			  		    		<div class="col-xs-6">
+			  		    			<p>Total: {{cart.total() | currency:"&#8377;"}}</p>
+			  		    		</div>
 			  		    	</div>
 			  		    	<div class="row third-row">
 			  		    		<div class="col-xs-6">
 			  		    			<div class="input-group input-group-sm">
 			  		    			  <span class="input-group-addon" id="sizing-addon3">Qty</span>
-			  		    			  <input type="number" min="0" class="form-control" aria-describedby="sizing-addon3">
+			  		    			  <input type="number" min="0" ng-model="cart.qty" class="form-control" aria-describedby="sizing-addon3">
 			  		    			</div>
 			  		    		</div>
 			  		    		<div class="col-xs-6">
@@ -73,7 +75,7 @@
 			  		    	</div>
 			  		    	<div class="row second-row">
 			  		    		<div class="col-xs-6">
-			  		    			<p>Total: {{cart.total()| currency:"&#8377;"}}</p>
+			  		    			<p>Total: {{cart.total() | currency:"&#8377;"}}</p>
 			  		    		</div>
 			  		    	</div>
 			  		    	<div class="row third-row">
