@@ -3,10 +3,10 @@ angular.module('app')
 		var vm = this;
 
 		vm.qty = 1;
-		vm.cost = 10;
+		vm.value = parseInt(vm.value);
 		vm.total = function() {
 			var total = 0;
-			total += vm.qty * vm.cost;
+			total += vm.qty * vm.value;
 
 			return total;
 		}
