@@ -85,16 +85,15 @@ h2{
   width: 100%;
 }
 
-.col-1 {
-  height: 100%;
-  width: 50%;
-  display: inline-block;
+.input-group-sm {
+  width: 60%;
+  margin-left: 24px;
+  margin-top: 5px;
 }
 
-.col-2 {
-  height: 100%;
-  width: 50%;
-  display: inline-block;
+.user-choice {
+  height:30px;
+  margin-top: 5px;
 }
 
 .rupsymbol{
