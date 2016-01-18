@@ -41,7 +41,7 @@ html {
   background-color: #fff;
   border-width: 2px;
   border-style: solid;
-  border-color: #000;
+  border-color: #eee;
 }
 
 .heading-md {
@@ -50,6 +50,11 @@ html {
   width: 100%;
   background-color: #FFC107;
   padding: 12px;
+}
+
+h2{
+  padding: 0px;
+  margin-top: 5px;
 }
 
 .content {
