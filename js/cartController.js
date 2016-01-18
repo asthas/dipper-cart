@@ -1,7 +1,7 @@
 angular.module('app', [])
 	.controller('CartController', function () {
 		var vm = this;
-		vm.qty = 1;
+		vm.qty = 0;
 		vm.value = parseInt(vm.value);
 		vm.total = function() {
 			var total = 0;
