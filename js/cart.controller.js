@@ -34,6 +34,7 @@ angular.module('app')
 
 		vm.choices = [
 			{
+				added: false,
 				quantity: 1,
 				size: {
 					label: '50gm - Rs.10',
@@ -41,6 +42,7 @@ angular.module('app')
 				}
 			},
 			{
+				added: false,
 				quantity: 1,
 				size: {
 					label: '50gm - Rs.10',
@@ -49,16 +51,22 @@ angular.module('app')
 			}
 		];
 
-		vm.updateQuantity = function() {
+		vm.updateQuantity = function(i) {
 			var total = 0;
+
+			//Set field added of the selected item to true
+			vm.choices[i].added = true;
+
+			//Add all quantities of item who have been selected
 			vm.choices.forEach(function(choice) {
-				total += choice.quantity;
+				if (choice.added === true) {
+					total += choice.quantity;
+				}
 			});
 			QuantityService.quantity = total;
 		}
 
 		vm.getTotal = function(i) {
-			vm.updateQuantity();
 			var choice = vm.choices[i];
 			var total = choice.quantity * choice.size.value;
 			return total;
