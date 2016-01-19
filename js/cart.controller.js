@@ -1,5 +1,5 @@
 angular.module('app')
-	.controller('CartController', function () {
+	.controller('CartController', function (QuantityService) {
 		var vm = this;
 		vm.items = [
 			{
@@ -49,15 +49,18 @@ angular.module('app')
 			}
 		];
 
-		vm.getTotal = function(i) {
-			var choice = vm.choices[i];
-			var total = choice.quantity * choice.size.value;
-			return total;
+		vm.updateQuantity = function() {
+			var total = 0;
+			vm.choices.forEach(function(choice) {
+				total += choice.quantity;
+			});
+			QuantityService.quantity = total;
 		}
 
-		vm.total = function() {
-			var total = 0;
-			total += vm.qty * vm.value;
+		vm.getTotal = function(i) {
+			vm.updateQuantity();
+			var choice = vm.choices[i];
+			var total = choice.quantity * choice.size.value;
 			return total;
 		}
 	});

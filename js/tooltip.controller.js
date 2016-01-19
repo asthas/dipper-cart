@@ -1,5 +1,7 @@
 angular.module('app')
-	.controller('TooltipController', function() {
+	.controller('TooltipController', function(QuantityService) {
 		var vm = this;
-		vm.totalQuantity = 11;
+		vm.totalQuantity = function() {
+			return QuantityService.quantity;
+		}
 	})
