@@ -1,4 +1,4 @@
-angular.module('app', [])
+angular.module('app')
 	.controller('toolCtrl', function() {
 		var vm = this;
 		vm.qty1=0;
@@ -10,6 +10,6 @@ angular.module('app', [])
 			Totalqty += vm.qty1 + vm.qty2;
 			return Totalqty;
 		}
-		
+
 		console.log("Quantity is" + vm.Totalqty());
 	})

@@ -10,7 +10,7 @@
 	<!--Angular CDN -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
 </head>
-<body id="page-top" ng-app="app" ng-controller="toolCtrl as tool">
+<body id="page-top" ng-app="app" >
 	<nav class="navbar navbar-default navbar-fixed-top">
   		<div class="container">
     		<button class="nav navbar-nav navbar-right btn btn-default btn-lg" data-toggle="tooltip" data-placement="bottom" title="{{tool.Totalqty()}}">
@@ -19,92 +19,55 @@
   		</div>
 	</nav>
 	<section id="intro" class="intro-section">
-		<div class="container">
+		<div class="container" ng-controller="CartController as cart">
 			<div class="row">
-			  <div class="col-md-6">
-			  	<center>
-			  		<div class="servive-block">
-			  			<div class="heading-md">
-			  				<h2>Lays Classic Salted</h2>
-			  			</div>
-			  		    <div class="content">
-			  		    	<img src="http://www.futurekirana.com/image/cache/data/image%20new-15-01-13/Lays-Classic-Salted-26-g-120x120.jpg" > 
-			  		    </div>
-			  		     <div class="details" ng-controller="CartController as cart">
-			  		    	<div class="row first-row">
-			  		    		
-			  		    	</div>
-			  		    	<div class="row second-row">
-			  		    		<div class="col-xs-6">
-			  		    			<p>Total: {{cart.total() | currency:"&#8377;"}}</p>
-			  		    		</div>
-			  		    	</div>
-			  		    	<div class="row third-row">
-			  		    		<div class="col-xs-6">
-			  		    			<div class="input-group input-group-sm">
-			  		    			  <span class="input-group-addon" id="sizing-addon3">Qty</span>
-			  		    			  <input type="number" min="0" ng-model="cart.qty" ng-model="tool.qty1" class="form-control" aria-describedby="sizing-addon3">
-			  		    			</div>
-			  		    		</div>
-			  		    		<div class="col-xs-6">
-			  		    			<select class="user-choice" ng-model="cart.value">
-			  		    				<option value="">Please select</option>
-			  		    			  <option value="10">50gm - Rs.10</option>
-			  		    			  <option value="20">100gm - Rs.20</option>
-			  		    			</select>
-			  		    		</div>	
-			  		    	</div>
-			  		    </div>
-			  		    <div >
-			  		    	<button class="buyButton">Buy</button>
-			  		    </div> 
-			  		</div>
-			  	</center>
+
+			  <div class="col-md-6" ng-repeat="item in cart.items">
+			      <center>
+			          <div class="servive-block">
+			              <div class="heading-md">
+			                  <h2>{{ item.title }}</h2>
+			              </div>
+			              <div class="content">
+			                  <img ng-src={{item.img}} >
+			              </div>
+			               <div class="details">
+			                  <div class="row first-row">
+
+			                  </div>
+			                  <div class="row second-row">
+			                      <div class="col-xs-6">
+			                          <p>Total: Rs 1</p>
+			                      </div>
+			                  </div>
+			                  <div class="row third-row">
+			                      <div class="col-xs-6">
+			                          <div class="input-group input-group-sm">
+			                            <span class="input-group-addon" id="sizing-addon3">Qty</span>
+			                            <input type="number" min="0" ng-model="cart.qty" ng-model="tool.qty1" class="form-control" aria-describedby="sizing-addon3">
+			                          </div>
+			                      </div>
+			                      <div class="col-xs-6">
+			                          <select
+			                          	ng-model="item.choice"
+			                          	ng-options="option.label for option in item.options">
+			                          	<option value="">-- Please Select --</option>
+			                          </select>
+			                      </div>
+			                  </div>
+			              </div>
+			              <div >
+			                  <button class="buyButton">Buy</button>
+			              </div>
+			          </div>
+			      </center>
 			  </div>
-			  <div class="col-md-6">
-				<center>
-			  		<div class="servive-block">
-			  			<div class="heading-md">
-			  				<h2>Lays Magic Masala</h2>
-			  			</div>
-			  		    <div class="content">
-			  		    	<img src="http://images.discountbazaarcard.com/cache/data/products/grocery/veg-snacks/2129/lays-potato-chips-india-magic-masala-120x120.jpg" > 
-			  		    </div> 
-			  		    <div class="details" ng-controller="CartController as cart">
-			  		    	<div class="row first-row">
-			  		    		
-			  		    	</div>
-			  		    	<div class="row second-row">
-			  		    		<div class="col-xs-6">
-			  		    			<p>Total: {{cart.total() | currency:"&#8377;"}}</p>
-			  		    		</div>
-			  		    	</div>
-			  		    	<div class="row third-row">
-			  		    		<div class="col-xs-6">
-			  		    			<div class="input-group input-group-sm">
-			  		    			  <span class="input-group-addon" id="sizing-addon3">Qty</span>
-			  		    			  <input type="number" ng-model="cart.qty" ng-model="tool.qty2" min="0" class="form-control" aria-describedby="sizing-addon3">
-			  		    			</div>
-			  		    		</div>
-			  		    		<div class="col-xs-6">
-			  		    			<select class="user-choice" ng-model="cart.value">
-			  		    			  <option value="10">50gm - Rs.10</option>
-			  		    			  <option value="20">100gm - Rs.20</option>
-			  		    			</select>
-			  		    		</div>	
-			  		    	</div>
-			  		    </div>
-			  		    <div>
-			  		    	<button class="buyButton">Buy</button>
-			  		    </div>                      
-			  		</div>
-			  	</center>
-			  </div>
+
 			</div>
 		</div>
 	</section>
-	
-	
+
+
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -117,7 +80,7 @@
 	</script>
 	<!-- custom scripts -->
 	<script src="js/app.js"></script>
-	<script src="js/cartController.js"></script>
+	<script src="js/cart.controller.js"></script>
 	<script src="js/tooltip.controller.js"></script>
 </body>
 </html>
