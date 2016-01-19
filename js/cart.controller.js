@@ -31,6 +31,7 @@ angular.module('app')
 				]
 			}
 		];
+		vm.choices = [];
 		vm.qty = 0;
 		vm.value = parseInt(vm.value);
 		vm.total = function() {
