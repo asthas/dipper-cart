@@ -7,11 +7,11 @@ angular.module('app')
 				img: '/images/lays-magic-masala.jpg',
 				options: [
 					{
-						name: '50gm - Rs.10',
+						label: '50gm - Rs.10',
 						value: 10
 					},
 					{
-						name: '100gm - Rs.20',
+						label: '100gm - Rs.20',
 						value: 20
 					}
 				]
@@ -21,11 +21,11 @@ angular.module('app')
 				img: '/images/lays-classic-salted.jpg',
 				options: [
 					{
-						name: '50gm - Rs.10',
+						label: '50gm - Rs.10',
 						value: 10
 					},
 					{
-						name: '100gm - Rs.20',
+						label: '100gm - Rs.20',
 						value: 20
 					}
 				]
@@ -36,14 +36,14 @@ angular.module('app')
 			{
 				quantity: 1,
 				size: {
-					name: '50gm - Rs.10',
+					label: '50gm - Rs.10',
 					value: 10
 				}
 			},
 			{
 				quantity: 1,
 				size: {
-					name: '50gm - Rs.10',
+					label: '50gm - Rs.10',
 					value: 10
 				}
 			}
@@ -51,11 +51,8 @@ angular.module('app')
 
 		vm.getTotal = function(i) {
 			var choice = vm.choices[i];
-			if (choice && choice.quantity && choice.size) {
-				return choice.quantity * choice.size.value;
-			} else {
-				return 0;
-			}
+			var total = choice.quantity * choice.size.value;
+			return total;
 		}
 
 		vm.total = function() {

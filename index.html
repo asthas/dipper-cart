@@ -13,7 +13,7 @@
 <body id="page-top" ng-app="app" ng-controller="TooltipController as tooltip">
 	<nav class="navbar navbar-default navbar-fixed-top">
   		<div class="container">
-    		<button class="nav navbar-nav navbar-right btn btn-default btn-lg" data-toggle="tooltip" data-placement="bottom" title="{{tooltip.totalQuantitiy()}}">
+    		<button class="nav navbar-nav navbar-right btn btn-default btn-lg" data-toggle="tooltip" data-placement="bottom" title={{tooltip.totalQuantity}}>
     			<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
     		</button>
   		</div>
@@ -54,7 +54,7 @@
 			                      </div>
 			                      <div class="col-xs-6">
 			                          <select
-			                          	ng-options="option.name for option in item.options track by option.value"
+			                          	ng-options="option.label for option in item.options track by option.value"
 										ng-model="cart.choices[$index].size"
 			                          	>
 			                          </select>
