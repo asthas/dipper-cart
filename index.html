@@ -54,9 +54,9 @@
 			                      </div>
 			                      <div class="col-xs-6">
 			                          <select
-			                          	ng-model="cart.choices[$index].size"
-			                          	ng-options="option.label for option in item.options">
-			                          	<option value="">-- Please Select --</option>
+			                          	ng-options="option.name for option in item.options track by option.value"
+										ng-model="cart.choices[$index].size"
+			                          	>
 			                          </select>
 			                      </div>
 			                  </div>
