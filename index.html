@@ -7,13 +7,18 @@
 	<!-- bootstrap CDn -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="http://anijs.github.io/lib/anicollection/anicollection.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
 	<!--Angular CDN -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.min.js"></script>
+	<!-- Helpers library -->
+  	<script src="https://cdn.jsdelivr.net/anijs/0.9.3/anijs-min.js"></script>
+  	
 </head>
 <body id="page-top" ng-app="app" ng-controller="TooltipController as tooltip">
 	<nav class="navbar navbar-default navbar-fixed-top">
   		<div class="container">
-    		<button class="nav navbar-nav navbar-right btn btn-default btn-lg" data-toggle="tooltip" data-placement="bottom" title={{tooltip.totalQuantity()}}>
+    		<button data-anijs="if: click, do: flipInY animated" class="nav navbar-nav navbar-right btn btn-default btn-lg" data-toggle="tooltip" data-placement="bottom" title={{tooltip.totalQuantity()}}>
     			<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
     		</button>
   		</div>
@@ -25,7 +30,7 @@
 			  <div class="col-md-6" ng-repeat="item in cart.items">
 			      <center>
 			          <div class="servive-block">
-			              <div class="heading-md">
+			              <div data-anijs="if: click, do: flipInY animated" class="heading-md">
 			                  <h2>{{ item.title }}</h2>
 			              </div>
 			              <div class="content">
@@ -37,7 +42,7 @@
 			                  </div>
 			                  <div class="row second-row">
 			                      <div class="col-xs-6">
-			                          <p>Total: Rs {{cart.getTotal($index)}}</p>
+			                          <p>Total:&nbsp;{{cart.getTotal($index)}}&#8377;</p>
 			                      </div>
 			                  </div>
 			                  <div class="row third-row">
@@ -53,7 +58,7 @@
 			                          </div>
 			                      </div>
 			                      <div class="col-xs-6">
-			                          <select
+			                          <select class="user-choice"
 			                          	ng-options="option.label for option in item.options track by option.value"
 										ng-model="cart.choices[$index].size"
 			                          	>
@@ -62,9 +67,7 @@
 			                  </div>
 			              </div>
 			              <div >
-			                  <button
-			                  	ng-click="cart.updateQuantity($index)"
-			                  	class="buyButton">
+			                  <button data-anijs="if: click, do: flipInY animated" class="buyButton" ng-click="cart.updateQuantity($index)">
 			                  		Buy
 			                  </button>
 			              </div>
@@ -82,6 +85,14 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
+	<!-- AniJS core library -->
+	  <script src="http://anijs.github.io/lib/anijs/anijs-min.js"></script> 
+	  
+	  <!-- Include to use $addClass, $toggleClass or $removeClass -->
+	  <script src="http://anijs.github.io/lib/anijs/helpers/dom/anijs-helper-dom-min.js"></script>
+
+	  <!-- The scrollreveal helper-->
+	  <script src="http://anijs.github.io/lib/anijs/helpers/scrollreveal/anijs-helper-scrollreveal-min.js"></script>
 	<script>
 		$(function () {
 		  $('[data-toggle="tooltip"]').tooltip()
