@@ -37,14 +37,19 @@
 			                  </div>
 			                  <div class="row second-row">
 			                      <div class="col-xs-6">
-			                          <p>Total: Rs 1</p>
+			                          <p>Total: Rs {{cart.getTotal($index)}}</p>
 			                      </div>
 			                  </div>
 			                  <div class="row third-row">
 			                      <div class="col-xs-6">
 			                          <div class="input-group input-group-sm">
 			                            <span class="input-group-addon" id="sizing-addon3">Qty</span>
-			                            <input type="number" min="0" ng-model="cart.qty" ng-model="tool.qty1" class="form-control" aria-describedby="sizing-addon3">
+			                            <input
+			                            	type="number"
+			                            	min="1"
+			                            	ng-model="cart.choices[$index].quantity"
+			                            	class="form-control"
+			                            	aria-describedby="sizing-addon3">
 			                          </div>
 			                      </div>
 			                      <div class="col-xs-6">
