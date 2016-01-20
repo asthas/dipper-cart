@@ -57,6 +57,18 @@ h2{
   margin-top: 5px;
 }
 
+@keyframes example {
+  0%   { left: 0%; }
+  50%  { left: 38%; bottom: 30%; height: 80px; width: 50%; }
+  100% { left: 76%; bottom: 60%; height: 40px; width: 25%; }
+}
+
+.product-image {
+  position: relative;
+  animation-name: example;
+  animation-duration: 5s;
+}
+
 .content {
 	height: 160px;
 	width: 100%;

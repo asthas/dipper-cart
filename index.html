@@ -15,7 +15,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
 	<!-- Helpers library -->
   	<script src="https://cdn.jsdelivr.net/anijs/0.9.3/anijs-min.js"></script>
-  	
+
 </head>
 <body id="page-top" ng-app="app" ng-controller="TooltipController as tooltip">
 	<nav class="navbar navbar-default navbar-fixed-top">
@@ -36,7 +36,7 @@
 			                  <h2>{{ item.title }}</h2>
 			              </div>
 			              <div class="content">
-			                  <img id="lays" ng-src={{item.img}}>
+			                  <img class="product-image" ng-src={{item.img}}>
 			              </div>
 			               <div class="details">
 			                  <div class="row first-row">
@@ -44,7 +44,7 @@
 			                  </div>
 			                  <div class="row second-row">
 			                      <div class="col-xs-6">
-			                          <p>Total:&nbsp;{{cart.getTotal($index)}}&#8377;</p>
+			                          <p>Total:&nbsp; &#8377; {{cart.getTotal($index)}}</p>
 			                      </div>
 			                  </div>
 			                  <div class="row third-row">
@@ -87,14 +87,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="js/bootstrap.min.js"></script>
-	<!-- AniJS core library -->
-	  <script src="http://anijs.github.io/lib/anijs/anijs-min.js"></script> 
-	  
-	  <!-- Include to use $addClass, $toggleClass or $removeClass -->
-	  <script src="http://anijs.github.io/lib/anijs/helpers/dom/anijs-helper-dom-min.js"></script>
-
-	  <!-- The scrollreveal helper-->
-	  <script src="http://anijs.github.io/lib/anijs/helpers/scrollreveal/anijs-helper-scrollreveal-min.js"></script>
 	<script>
 		$(function () {
 		  $('[data-toggle="tooltip"]').tooltip()
